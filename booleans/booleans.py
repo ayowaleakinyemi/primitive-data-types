@@ -6,7 +6,7 @@
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-newBoolean = None
+newBoolean = False
 
 ########################################################################
 
@@ -27,7 +27,7 @@ scoreToPass = 75
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-studentPasses = None
+studentPasses = examScore1 > scoreToPass  or  examScore2 > scoreToPass
 
 ########################################################################
 
@@ -58,10 +58,14 @@ student2Chuck = random.randint(4, 6)
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-numberOfWood = None
-numberOfChuck = None
 
-bothAtLeastOneCorrect = None
+tongueTwiser = tongueTwiser.replace("woodchuck", "")
+numberOfWood = tongueTwiser.count("wood")
+numberOfChuck = tongueTwiser.count("chuck")
+
+student1 = (student1Wood == numberOfWood) or (student1Chuck == numberOfChuck)
+student2 = (student2Chuck == numberOfChuck) or (student2Wood == numberOfWood)
+bothAtLeastOneCorrect = student1 and student2
 
 ########################################################################
 
@@ -89,6 +93,13 @@ truthy1 = truthy2 = None
 
 # truthy1 = bool("non-empty string")
 # truthy2 = bool(1)
+
+falsy1 = bool("")
+falsy2 = bool(0)
+falsy3 = bool(None)
+
+truthy1 = bool("non-empty string")
+truthy2 = bool(1)
 
 ########################################################################
 
