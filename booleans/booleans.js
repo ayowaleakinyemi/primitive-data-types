@@ -6,7 +6,7 @@
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let newBoolean
+let newBoolean = true
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -25,9 +25,9 @@ let dadsHeight = generateRandomNumber(100, 200)
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let momIsTaller
-let dadIsTaller
-let areTheSameHeight
+let momIsTaller = momsHeight > dadsHeight
+let dadIsTaller = dadsHeight > momsHeight
+let areTheSameHeight = dadsHeight === momsHeight
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -46,7 +46,7 @@ let studentEssay = generateSudentEssay()
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let notPlagiarised
+let notPlagiarised = !studentEssay.toLowerCase().includes(keyPhrase)
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -68,10 +68,10 @@ let thresholdForTall = 150
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let siblingsAreTall
-let siblingsAreShort
-let atLeastOneIsTall
-let onlyOneIsTall
+let siblingsAreTall = sistersHeight > thresholdForTall && brothersHeight > thresholdForTall
+let siblingsAreShort = sistersHeight < thresholdForTall && brothersHeight < thresholdForTall
+let atLeastOneIsTall = sistersHeight > thresholdForTall || brothersHeight > thresholdForTall
+let onlyOneIsTall = (sistersHeight > thresholdForTall) !== (brothersHeight > thresholdForTall)
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -94,7 +94,15 @@ let secretCode = generateSecretCode()
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let codeIsValid
+let fifthChar = secretCode[4];
+let tenthChar = secretCode[9];
+
+let fifthIsUpperCase = fifthChar >= 'A' && fifthChar <= 'Z';
+let tenthIsDigit = tenthChar >= '0' && tenthChar <= '9';
+let correctLength = secretCode.length === 15;
+
+let codeIsValid = fifthIsUpperCase && tenthIsDigit && correctLength;
+
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -122,6 +130,14 @@ let truthy1, truthy2
 
 // truthy1 = Boolean("non-empty string")
 // truthy2 = Boolean(1)
+
+falsy1 = Boolean("")
+falsy2 = Boolean(0)
+falsy3 = Boolean(undefined)
+falsy4 = Boolean(null)
+
+truthy1 = Boolean("non-empty string")
+truthy2 = Boolean(1)
 
 ////////////////////////////////////////////////////////////////////////
 
